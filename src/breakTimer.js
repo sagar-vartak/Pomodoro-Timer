@@ -1,7 +1,9 @@
 var a;
 var b = 0;
+var lgBreak = 0;
 
 function change() {
+  pomoTimer.play();
   let divMenu = document.getElementById("menu");
   divMenu.classList = "menuChange";
   let para = document.getElementById("h2");
@@ -17,6 +19,7 @@ function rechange() {
 function startBreak() {
   if (a == b) {
     console.log("function already running");
+    warnSound.play();
     document.getElementById("message").innerHTML = "Timer Already Running";
     setTimeout(function () {
       document.getElementById("message").innerHTML = "";
@@ -34,7 +37,12 @@ function stopBreak() {
 } /* Stop */
 
 var sec1 = 59; /* holds decrementing value */
-var min1 = 00; //testingggggggg otherwise its 5
+if (userMin == 0) {
+  var min1 = breakMin;
+} else {
+  var min1 = breakMin - 1; // teasttingggggggggg
+}
+//testingggggggg otherwise its 5
 
 /* Contains and outputs returned value of  function checkTime */
 
@@ -60,11 +68,13 @@ function timerBreak() {
   if (min1 == 00 && sec1 == 00) {
     //break return call to start again
     console.log("Break is Over");
+    lgBreak = lgBreak + 1;
+    breakTime.play();
     stopBreak();
     stop();
-    reset();
     resetBreak();
     startOver();
+    reset();
   }
   console.log(secOut1);
   document.getElementById("min").innerHTML = minOut1;

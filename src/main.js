@@ -1,8 +1,15 @@
 var x;
 var y = 0;
+var s = 0;
+const userMin = parseInt(
+  prompt("Enter Countdown/pomodoro time in Minutes", "25"),
+  10
+);
+const breakMin = parseInt(prompt("Enter Break time in Minutes", "05"), 10);
 function start() {
   if (x == y) {
     console.log("function already running");
+    warnSound.play();
     document.getElementById("message").innerHTML = "Timer Already Running";
     setTimeout(function () {
       document.getElementById("message").innerHTML = "";
@@ -19,9 +26,12 @@ function stop() {
   y++;
 } /* Stop */
 
-var sec = 10; /* holds decrementing value */
-var min = 00; // teasttingggggggggg
-
+var sec = 59; /* holds decrementing value */
+if (userMin == 0) {
+  var min = userMin;
+} else {
+  var min = userMin - 1; // teasttingggggggggg
+}
 /* Contains and outputs returned value of  function checkTime */
 
 var secOut = 0;
@@ -47,13 +57,18 @@ function timer() {
     /* stop();
     reset(); */
     //call to break timer logic
-    stop();
-    change();
-    rechange();
-    startBreak();
+    s = s + 1;
+    if (s == 1) {
+      stop();
+      change();
+      rechange();
+      startBreak();
+    }
   }
   console.log(secOut);
   document.getElementById("min").innerHTML = minOut;
+
+  s = 0;
 }
 
 /* Adds 0 when value is <10 */
@@ -83,4 +98,18 @@ function myFunction(x) {
   var element = document.body;
   element.classList.toggle("light-header-footer");
   x.classList.toggle("fa-moon-o");
+}
+
+function takeBreak() {
+  let divMenu = document.getElementById("menu");
+  divMenu.classList = "menuChange";
+  let divMenu1 = document.getElementById("menu1");
+  divMenu1.classList = "menuVisible";
+  let para = document.getElementById("h2");
+  para.classList = "invisible";
+  let para1 = document.getElementById("h2-1");
+  para1.classList = "visible";
+  resetBreak();
+  stopBreak();
+  /* resetBreak(); */
 }
