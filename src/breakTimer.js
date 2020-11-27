@@ -17,6 +17,8 @@ function rechange() {
 }
 
 function startBreak() {
+  /* let sp1 = getElementById("min");
+  sp1.innerHTML = breakMin; */
   if (a == b) {
     console.log("function already running");
     warnSound.play();
@@ -37,7 +39,7 @@ function stopBreak() {
 } /* Stop */
 
 var sec1 = 59; /* holds decrementing value */
-if (userMin == 0) {
+if (breakMin == 0) {
   var min1 = breakMin;
 } else {
   var min1 = breakMin - 1; // teasttingggggggggg
@@ -93,11 +95,11 @@ function resetBreak() {
   /*Reset*/
 
   sec1 = 59;
-  min1 = 00; /////testingggggggggg
+  min1 = breakMin - 1; /////testingggggggggg
   hour1 = 0;
 
   document.getElementById("sec").innerHTML = "00";
-  document.getElementById("min").innerHTML = "05";
+  document.getElementById("min").innerHTML = breakMin;
   /* reset(); */
 }
 

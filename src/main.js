@@ -1,12 +1,13 @@
 var x;
 var y = 0;
 var s = 0;
-const userMin = parseInt(
-  prompt("Enter Countdown/pomodoro time in Minutes", "25"),
-  10
-);
-const breakMin = parseInt(prompt("Enter Break time in Minutes", "05"), 10);
+const userMin = prompt("Enter Countdown/pomodoro time in Minutes", "25");
+
+const breakMin = prompt("Enter Break time in Minutes", "05");
+document.getElementById("min").innerHTML = userMin;
+
 function start() {
+  reset();
   if (x == y) {
     console.log("function already running");
     warnSound.play();
@@ -87,11 +88,11 @@ function reset() {
   let divMenu1 = document.getElementById("menu1");
   divMenu1.classList = "menuChange";
   sec = 59;
-  min = 24;
+  min = userMin - 1;
   hour = 0;
 
   document.getElementById("sec").innerHTML = "00";
-  document.getElementById("min").innerHTML = "25";
+  document.getElementById("min").innerHTML = userMin;
 }
 
 function myFunction(x) {
