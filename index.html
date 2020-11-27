@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <link href="./images/icon.png" rel="icon" type="image/png" />
+    <script src="./src/main.js"></script>
+    <script src="./src/breakTimer.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div id="header-container">
+        <div id="header" class="container">
+          <div id="logo">
+            <img src="./images/icon.png" width="100px" height="100px" />
+            <h2 id="header-h1">PomoDoro Timer</h2>
+            <span onclick="myFunction(this)" class="fa fa-sun-o fa-2x"></span>
+          </div>
+        </div>
+        <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
+      </div>
+    </header>
+    <div class="watch">
+      <h2 id="h2" class="visible">POMODORO TIMER</h2>
+      <h2 id="h2-1" class="invisible">BREAK</h2>
+      <h1 id="digits">
+        <span id="min">25</span> :
+        <span id="sec">00</span>
+      </h1>
+      <p id="message"></p>
+    </div>
+    <div id="menu" class="menuVisible">
+      <ul>
+        <li onclick="start()" id="start">
+          <a title="start">Start</a>
+        </li>
+        <li onclick="stop()" id="stop">
+          <a title="Pause">Pause</a>
+        </li>
+        <li onclick="reset()"><a title="reset">Reset</a></li>
+      </ul>
+    </div>
+    <div id="menu1" class="menuChange">
+      <ul>
+        <li onclick="startBreak()" id="start">
+          <a title="start">Start</a>
+        </li>
+        <li onclick="stopBreak()" id="stop">
+          <a title="Pause">Pause</a>
+        </li>
+        <li onclick="resetBreak()"><a title="reset">Reset</a></li>
+        <li onclick="startOver()"><a title="StartOver">StartOver</a></li>
+      </ul>
+    </div>
+    <footer class="footer">
+      <div id="copyright">
+        <p>&copy; ShAaGGy. All rights reserved. | Design by Sagar Vartak</p>
+        <ul class="contact">
+          <li>
+            <a href="#"><span class="fa fa-twitter fa-2x"></span></a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-facebook fa-2x"></span></a>
+          </li>
+          <li>
+            <a href="#"><span class="fa fa-instagram fa-2x"></span></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
