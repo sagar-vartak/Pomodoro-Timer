@@ -5,6 +5,8 @@ const userMin = prompt("Enter Countdown/pomodoro time in Minutes", "25");
 
 const breakMin = prompt("Enter Break time in Minutes", "05");
 document.getElementById("min").innerHTML = userMin;
+document.getElementById("sec").innerHTML = "00";
+reset();
 
 function start() {
   reset();
@@ -114,3 +116,4 @@ function takeBreak() {
   stopBreak();
   /* resetBreak(); */
 }
+reset();
