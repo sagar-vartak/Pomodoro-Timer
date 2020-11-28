@@ -4,7 +4,14 @@ This is a Pomodoro timer which is created using HTML, CSS, and Javascript.
 
 ## Fundamentals
 
-A stop watch is a device used to measure speed or duration in fractions of a second, typically for sporting or athletic events. In this project I had made a web application of stopwatch. It has following features
+The time management technique created by Francesco Cirillo for a more productive way to work and study.
+
+Well, it comprises of the following basic steps:
+
+- Decide on the task at hand
+- Set the Pomodoro (timer) to 25 minutes
+- Work on the task until the timer expires; Record with an X
+- Take a Short Break (5 minutes)
 
 - It shows time in MM:SS format
 - Takes time as input from user
