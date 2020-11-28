@@ -9,7 +9,6 @@ document.getElementById("sec").innerHTML = "00";
 reset();
 
 function start() {
-  reset();
   if (x == y) {
     console.log("function already running");
     warnSound.play();
